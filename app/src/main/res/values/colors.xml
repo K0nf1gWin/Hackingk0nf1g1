@@ -1,0 +1,9 @@
+<resources>
+    <color name="bg">#0B0B0D</color>
+    <color name="panel">#16161A</color>
+    <color name="red">#E5132B</color>
+    <color name="red_dark">#8E0B1A</color>
+    <color name="text">#ECECEC</color>
+    <color name="muted">#8A8A92</color>
+    <color name="term">#4CFF7A</color>
+</resources>
