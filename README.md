@@ -4,21 +4,52 @@ App Android (Kotlin, sem dependências pesadas) com ferramentas de auditoria de 
 feito para rodar no **RedMagic** (ou qualquer Android 8+). Não precisa de root.
 
 > ⚠️ Use apenas em redes e sistemas que você possui ou tem autorização por escrito
-> para testar. Acesso não autorizado é crime (Lei 12.737/2012).
+> para testar. Acesso não autorizado é crime (Lei 12.737/2012). Ferramentas de scan
+> ativo (Nmap, Dir fuzz, Shodan, Tecnologias com teste de WAF) fazem requisições reais
+> ao alvo — confirme o escopo autorizado antes de rodar.
 
 ## Ferramentas
 
+### Recon
 | Aba | O que faz |
 |---|---|
-| **EASM** | Superfície de ataque externa de um domínio: subdomínios (CT + wordlist), DNS, subdomain takeover, IP/ASN, portas de risco expostas, serviços web, TLS, arquivos sensíveis (.git, .env, actuator, phpinfo...), SPF/DMARC/CAA/DNSSEC |
-| Minha rede | Interface, IP local, gateway, DNS, sub-rede e IP público |
+| **EASM** | Superfície de ataque externa de um domínio: subdomínios (7 fontes passivas), DNS, subdomain takeover, IP/ASN, portas de risco expostas, serviços web, TLS, arquivos sensíveis (.git, .env, actuator, phpinfo...), SPF/DMARC/CAA/DNSSEC |
+| **Harvester** | OSINT estilo theHarvester: subdomínios (crt.sh, HackerTarget, Anubis, AlienVault OTX, urlscan.io, RapidDNS, Wayback), e-mails do site, IPs/provedores, ambientes de homologação expostos |
+| **Whois** | Registro de domínio/IP via RDAP: registrador, datas, status, nameservers, bloco de rede |
+| **Shodan** | Consulta o Shodan InternetDB (grátis, sem tocar no alvo): portas, tecnologias, CVEs já indexados |
+| **CVE** | Busca no NVD por produto/versão ou CVE-ID, com flag CISA KEV (exploração ativa) e score EPSS |
+| Subdomínios | Recon passivo via Certificate Transparency (crt.sh) |
+| DNS | A, AAAA, MX, NS, TXT, CNAME, SOA, CAA via DNS-over-HTTPS; reverso de IP |
+
+### Scan
+| Aba | O que faz |
+|---|---|
+| **Nmap** | Scanner nativo estilo Nmap: descoberta, portas (-p), versão de serviço (-sV), SO por TTL (-O), scripts (-sC: ftp-anon, redis-info, ssl-cert, http-title/methods...), alerta de versões vulneráveis |
 | Hosts na LAN | Descobre dispositivos ativos na rede (sondagem TCP/RST + echo) com hostname |
 | Port scan | TCP connect scan (top, all, faixas, listas) com captura de banner |
+| **UPnP/SSDP** | Descobre dispositivos UPnP na LAN (roteadores, TVs, câmeras, IoT) com fabricante/modelo |
+
+### Rede
+| Aba | O que faz |
+|---|---|
+| Minha rede | Interface, IP local, gateway, DNS, sub-rede e IP público |
 | Ping | Ping do sistema |
-| DNS | A, AAAA, MX, NS, TXT, CNAME, SOA, CAA via DNS-over-HTTPS; reverso de IP |
-| Subdomínios | Recon passivo via Certificate Transparency (crt.sh) |
+| **Traceroute** | Mapeia os saltos até o alvo via ping com TTL crescente |
+| **Wi-Fi** | Redes próximas: canal, sinal, criptografia; alerta rede aberta, WEP, WPA1, WPS |
+
+### Web
+| Aba | O que faz |
+|---|---|
 | HTTP/TLS | Cabeçalhos de segurança, cookies, vazamento de versão, certificado TLS |
+| **TLS scan** | Protocolos suportados (SSLv3–TLS1.3), cifras fracas, detalhes do certificado |
+| **Tecnologias** | Fingerprint de CMS/framework/JS (com versões vulneráveis), CDN e WAF |
+| **Dir fuzz** | Varredura de caminhos/arquivos sensíveis (admin, .git, .env, backups, actuator...) com wordlist embutida |
+
+### Análise
+| Aba | O que faz |
+|---|---|
 | Encoder/Hash | Base64, URL, hex, MD5/SHA-1/SHA-256/SHA-512 (offline) |
+| **JWT** | Decodifica e audita tokens JWT: alg=none, expiração, claims sensíveis |
 
 ## Relatórios
 
