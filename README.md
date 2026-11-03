@@ -24,7 +24,7 @@ feito para rodar no **RedMagic** (ou qualquer Android 8+). Não precisa de root.
 ### Scan
 | Aba | O que faz |
 |---|---|
-| **Nmap** | Scanner nativo estilo Nmap: descoberta, portas (-p), versão de serviço (-sV), SO por TTL (-O), scripts (-sC: ftp-anon, redis-info, ssl-cert, http-title/methods...), alerta de versões vulneráveis |
+| **Nmap** | Scanner nativo estilo Nmap: descoberta, portas TCP (-p) e UDP (-sU), versão de serviço (-sV), SO por TTL (-O), scripts (-sC: ftp-anon, redis-info, ssl-cert, http-title/methods...), alerta de versões vulneráveis |
 | Hosts na LAN | Descobre dispositivos ativos na rede (sondagem TCP/RST + echo) com hostname |
 | Port scan | TCP connect scan (top, all, faixas, listas) com captura de banner |
 | **UPnP/SSDP** | Descobre dispositivos UPnP na LAN (roteadores, TVs, câmeras, IoT) com fabricante/modelo |
@@ -33,6 +33,7 @@ feito para rodar no **RedMagic** (ou qualquer Android 8+). Não precisa de root.
 | Aba | O que faz |
 |---|---|
 | Minha rede | Interface, IP local, gateway, DNS, sub-rede e IP público |
+| **Sistema** | whoami/uname: usuário Linux do app, modelo, versão Android/kernel, interfaces de rede, indícios de root |
 | Ping | Ping do sistema |
 | **Traceroute** | Mapeia os saltos até o alvo via ping com TTL crescente |
 | **Wi-Fi** | Redes próximas: canal, sinal, criptografia; alerta rede aberta, WEP, WPA1, WPS |
@@ -40,6 +41,7 @@ feito para rodar no **RedMagic** (ou qualquer Android 8+). Não precisa de root.
 ### Web
 | Aba | O que faz |
 |---|---|
+| **Web Pentest** | Rastreia o site e testa XSS refletido, SQLi, open redirect, CRLF/header injection, CORS mal configurado, Host header injection, segredos vazados em HTML/JS, CSRF ausente e GraphQL introspection. Só GET e payloads inofensivos — não envia formulário nem tenta login |
 | HTTP/TLS | Cabeçalhos de segurança, cookies, vazamento de versão, certificado TLS |
 | **TLS scan** | Protocolos suportados (SSLv3–TLS1.3), cifras fracas, detalhes do certificado |
 | **Tecnologias** | Fingerprint de CMS/framework/JS (com versões vulneráveis), CDN e WAF |
