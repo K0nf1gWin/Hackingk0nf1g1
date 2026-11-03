@@ -42,6 +42,8 @@ feito para rodar no **RedMagic** (ou qualquer Android 8+). Não precisa de root.
 | Aba | O que faz |
 |---|---|
 | **Web Pentest** | Rastreia o site e testa XSS refletido, SQLi, open redirect, CRLF/header injection, CORS mal configurado, Host header injection, segredos vazados em HTML/JS, CSRF ausente e GraphQL introspection. Só GET e payloads inofensivos — não envia formulário nem tenta login |
+| **Repeater** | Monta uma requisição HTTP à mão (método, URL, cabeçalhos, corpo) e mostra a resposta crua — edite e reenvie, como o Repeater do Burp/ZAP |
+| **Intruder** | Fuzzer de parâmetro estilo Burp Intruder (modo Sniper): marque o ponto com `§FUZZ§`, escolha um conjunto de payloads (SQLi/XSS/LFI/command injection/números/customizado) e compare status, tamanho e tempo de cada resposta |
 | HTTP/TLS | Cabeçalhos de segurança, cookies, vazamento de versão, certificado TLS |
 | **TLS scan** | Protocolos suportados (SSLv3–TLS1.3), cifras fracas, detalhes do certificado |
 | **Tecnologias** | Fingerprint de CMS/framework/JS (com versões vulneráveis), CDN e WAF |
