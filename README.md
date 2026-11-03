@@ -10,6 +10,7 @@ feito para rodar no **RedMagic** (ou qualquer Android 8+). Não precisa de root.
 
 | Aba | O que faz |
 |---|---|
+| **EASM** | Superfície de ataque externa de um domínio: subdomínios (CT + wordlist), DNS, subdomain takeover, IP/ASN, portas de risco expostas, serviços web, TLS, arquivos sensíveis (.git, .env, actuator, phpinfo...), SPF/DMARC/CAA/DNSSEC |
 | Minha rede | Interface, IP local, gateway, DNS, sub-rede e IP público |
 | Hosts na LAN | Descobre dispositivos ativos na rede (sondagem TCP/RST + echo) com hostname |
 | Port scan | TCP connect scan (top, all, faixas, listas) com captura de banner |
@@ -18,6 +19,18 @@ feito para rodar no **RedMagic** (ou qualquer Android 8+). Não precisa de root.
 | Subdomínios | Recon passivo via Certificate Transparency (crt.sh) |
 | HTTP/TLS | Cabeçalhos de segurança, cookies, vazamento de versão, certificado TLS |
 | Encoder/Hash | Base64, URL, hex, MD5/SHA-1/SHA-256/SHA-512 (offline) |
+
+## Relatórios
+
+Toda ferramenta executada fica registrada na sessão, e os achados recebem uma severidade
+(Crítica, Alta, Média, Baixa ou Info), com evidência e recomendação.
+O botão **📄 Relatório** gera e salva em `Download/RedPentest/`:
+
+- **HTML**: sumário executivo, tabela de achados, detalhamento, metodologia e anexo com as saídas
+- **Markdown**: para colar em wiki, Jira ou Confluence
+- **CSV**: para planilha, SIEM ou abertura de tickets
+
+Depois é só compartilhar por e-mail, Drive, Teams etc. **Zerar sessão** limpa tudo para um novo trabalho.
 
 ## Como instalar no RedMagic
 
