@@ -2,8 +2,9 @@
 
 App Android (Kotlin, sem dependências pesadas) com ferramentas de auditoria de rede,
 feito para rodar no **RedMagic** (ou qualquer Android 8+). Não precisa de root.
-Visual neon com chuva de código vermelha de fundo (cada categoria tem sua cor: OSINT ciano,
-Black Hat magenta, Rede verde, Web âmbar, Análise violeta). Tem um campo de **ALVO** global no
+Visual neon com chuva de código vermelha de fundo, ferramentas em cartões clicáveis com efeito
+de toque (ripple neon ao tocar), cada categoria com sua cor: OSINT ciano, Black Hat magenta,
+Rede verde, Web âmbar, Análise violeta. Tem um campo de **ALVO** global no
 topo: defina domínio/IP/URL uma vez e ele preenche o campo correspondente em qualquer ferramenta
 que você abrir.
 
@@ -32,6 +33,7 @@ que você abrir.
 | Hosts na LAN | Descobre dispositivos ativos na rede (sondagem TCP/RST + echo) com hostname |
 | Port scan | TCP connect scan (top, all, faixas, listas) com captura de banner |
 | **UPnP/SSDP** | Descobre dispositivos UPnP na LAN (roteadores, TVs, câmeras, IoT) com fabricante/modelo |
+| **Câmeras/CFTV** | Descoberta ONVIF (WS-Discovery) na LAN + varredura de portas de câmera/DVR/NVR (RTSP, Hikvision, Dahua, Xiongmai/XMeye) com fingerprint de fabricante e alerta de falhas conhecidas (backdoor, credencial padrão). Não tenta login nem acessa o vídeo |
 | **Web Pentest** | Rastreia o site e testa XSS refletido, SQLi, open redirect, CRLF/header injection, CORS mal configurado, Host header injection, segredos vazados em HTML/JS, CSRF ausente e GraphQL introspection. Só GET e payloads inofensivos — não envia formulário nem tenta login |
 | **Repeater** | Monta uma requisição HTTP à mão (método, URL, cabeçalhos, corpo) e mostra a resposta crua — edite e reenvie, como o Repeater do Burp/ZAP |
 | **Intruder** | Fuzzer de parâmetro estilo Burp Intruder (modo Sniper): marque o ponto com `§FUZZ§`, escolha um conjunto de payloads (SQLi/XSS/LFI/command injection/números/customizado) e compare status, tamanho e tempo de cada resposta |
