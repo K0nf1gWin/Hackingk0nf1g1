@@ -4,45 +4,60 @@
 
     <!-- brilho ambiente vermelho (LED), atrás da silhueta -->
     <path android:fillColor="#FF2158" android:fillAlpha="0.10"
-        android:pathData="M54,58 m-42,0 a42,42 0 1,0 84,0 a42,42 0 1,0 -84,0" />
+        android:pathData="M54,58 m-44,0 a44,44 0 1,0 88,0 a44,44 0 1,0 -88,0" />
     <path android:fillColor="#FF2158" android:fillAlpha="0.16"
-        android:pathData="M54,58 m-32,0 a32,32 0 1,0 64,0 a32,32 0 1,0 -64,0" />
+        android:pathData="M54,58 m-33,0 a33,33 0 1,0 66,0 a33,33 0 1,0 -66,0" />
     <path android:fillColor="#FF3A1E" android:fillAlpha="0.24"
-        android:pathData="M54,58 m-23,0 a23,23 0 1,0 46,0 a23,23 0 1,0 -46,0" />
+        android:pathData="M54,58 m-24,0 a24,24 0 1,0 48,0 a24,24 0 1,0 -48,0" />
 
-    <!-- silhueta: ombros -->
-    <path android:fillColor="#07070A"
-        android:pathData="M30,98 L40,78 L68,78 L78,98 Z" />
+    <!-- ombros, colarinho e gravata -->
+    <path android:fillColor="#0A0A0E"
+        android:pathData="M27,98 L38,80 L70,80 L81,98 Z" />
+    <path android:strokeColor="#FF2158" android:strokeWidth="1.1" android:strokeAlpha="0.7" android:fillColor="#00000000"
+        android:strokeLineCap="round"
+        android:pathData="M44,80 L51,87 M64,80 L57,87" />
+    <path android:fillColor="#B00020"
+        android:pathData="M51,83 L57,83 L55,98 L53,98 Z" />
 
-    <!-- silhueta: cabeça (sem rosto, anônima) -->
-    <path android:fillColor="#07070A"
-        android:pathData="M54,60 m-18,0 a18,18 0 1,0 36,0 a18,18 0 1,0 -36,0" />
+    <!-- máscara: rosto -->
+    <path android:fillColor="#0E0E13" android:strokeColor="#FF2158" android:strokeWidth="1.4" android:strokeAlpha="0.9"
+        android:pathData="M54,32 C65,33 74,43 74,56 C74,70 68,80 54,86 C40,80 34,70 34,56 C34,43 43,33 54,32 Z" />
 
-    <!-- chapéu: copa -->
-    <path android:fillColor="#07070A" android:strokeColor="#FF2158" android:strokeWidth="1.3" android:strokeAlpha="0.85"
-        android:pathData="M40,42 L40,24 C40,19 47,16 54,16 C61,16 68,19 68,24 L68,42 Z" />
-
-    <!-- chapéu: aba -->
-    <path android:fillColor="#07070A" android:strokeColor="#FF2158" android:strokeWidth="1.3" android:strokeAlpha="0.85"
-        android:pathData="M54,42 m-24,0 a24,6.2 0 1,0 48,0 a24,6.2 0 1,0 -48,0" />
-
-    <!-- chapéu: faixa -->
-    <path android:fillColor="#FF2158"
-        android:pathData="M40,36 L68,36 L68,40 L40,40 Z" />
+    <!-- sobrancelhas -->
+    <path android:strokeColor="#FF2158" android:strokeWidth="2.6" android:strokeAlpha="0.9" android:fillColor="#00000000"
+        android:strokeLineCap="round"
+        android:pathData="M40,50 L50,45 M68,50 L58,45" />
 
     <!-- olhos: brilho -->
     <path android:fillColor="#FF2158" android:fillAlpha="0.35"
-        android:pathData="M47,58 m-6,0 a6,6 0 1,0 12,0 a6,6 0 1,0 -12,0" />
+        android:pathData="M46,59 m-6,0 a6,6 0 1,0 12,0 a6,6 0 1,0 -12,0" />
     <path android:fillColor="#FF2158" android:fillAlpha="0.35"
-        android:pathData="M61,58 m-6,0 a6,6 0 1,0 12,0 a6,6 0 1,0 -12,0" />
+        android:pathData="M62,59 m-6,0 a6,6 0 1,0 12,0 a6,6 0 1,0 -12,0" />
 
     <!-- olhos: ponto aceso -->
     <path android:fillColor="#FF4D6D"
-        android:pathData="M47,58 m-3.2,0 a3.2,3.2 0 1,0 6.4,0 a3.2,3.2 0 1,0 -6.4,0" />
+        android:pathData="M46,59 m-3.4,0 a3.4,3.4 0 1,0 6.8,0 a3.4,3.4 0 1,0 -6.8,0" />
     <path android:fillColor="#FF4D6D"
-        android:pathData="M61,58 m-3.2,0 a3.2,3.2 0 1,0 6.4,0 a3.2,3.2 0 1,0 -6.4,0" />
+        android:pathData="M62,59 m-3.4,0 a3.4,3.4 0 1,0 6.8,0 a3.4,3.4 0 1,0 -6.8,0" />
     <path android:fillColor="#FFE3E8"
-        android:pathData="M48,56.6 m-1,0 a1,1 0 1,0 2,0 a1,1 0 1,0 -2,0" />
+        android:pathData="M47.4,57.4 m-1,0 a1,1 0 1,0 2,0 a1,1 0 1,0 -2,0" />
     <path android:fillColor="#FFE3E8"
-        android:pathData="M62,56.6 m-1,0 a1,1 0 1,0 2,0 a1,1 0 1,0 -2,0" />
+        android:pathData="M63.4,57.4 m-1,0 a1,1 0 1,0 2,0 a1,1 0 1,0 -2,0" />
+
+    <!-- sorriso sutil -->
+    <path android:strokeColor="#8E0B1A" android:strokeWidth="1.6" android:strokeAlpha="0.8" android:fillColor="#00000000"
+        android:strokeLineCap="round"
+        android:pathData="M45,72 Q54,77 63,72" />
+
+    <!-- chapéu: copa -->
+    <path android:fillColor="#0E0E13" android:strokeColor="#FF2158" android:strokeWidth="1.3" android:strokeAlpha="0.9"
+        android:pathData="M39,36 L39,20 C39,15 47,12 54,12 C61,12 69,15 69,20 L69,36 Z" />
+
+    <!-- chapéu: aba -->
+    <path android:fillColor="#0E0E13" android:strokeColor="#FF2158" android:strokeWidth="1.3" android:strokeAlpha="0.9"
+        android:pathData="M54,36 m-25,0 a25,6.4 0 1,0 50,0 a25,6.4 0 1,0 -50,0" />
+
+    <!-- chapéu: faixa -->
+    <path android:fillColor="#FF2158"
+        android:pathData="M39,30 L69,30 L69,34 L39,34 Z" />
 </vector>
