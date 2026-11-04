@@ -15,7 +15,7 @@ Visual neon (cada categoria tem sua cor: ciano, magenta, verde, âmbar, violeta)
 | Aba | O que faz |
 |---|---|
 | **EASM** | Superfície de ataque externa de um domínio: subdomínios (7 fontes passivas), DNS, subdomain takeover, IP/ASN, portas de risco expostas, serviços web, TLS, arquivos sensíveis (.git, .env, actuator, phpinfo...), SPF/DMARC/CAA/DNSSEC |
-| **Harvester** | OSINT estilo theHarvester: subdomínios (crt.sh, HackerTarget, Anubis, AlienVault OTX, urlscan.io, RapidDNS, Wayback), e-mails do site, IPs/provedores, ambientes de homologação expostos |
+| **Harvester** | OSINT estilo theHarvester: subdomínios (crt.sh, HackerTarget, Anubis, AlienVault OTX, urlscan.io, RapidDNS, Wayback, com nova tentativa automática em falha passageira), e-mails do site, IPs/provedores, ambientes de homologação expostos, lista final pronta pra copiar |
 | **Whois** | Registro de domínio/IP via RDAP: registrador, datas, status, nameservers, bloco de rede |
 | **Shodan** | Consulta o Shodan InternetDB (grátis, sem tocar no alvo): portas, tecnologias, CVEs já indexados |
 | **CVE** | Busca no NVD por produto/versão ou CVE-ID, com flag CISA KEV (exploração ativa) e score EPSS |
@@ -70,6 +70,10 @@ para ver. De dentro dele, o botão **Salvar** grava em `Download/DarkWire/` nos 
 - **CSV**: para planilha, SIEM ou abertura de tickets
 
 Depois é só compartilhar por e-mail, Drive, Teams etc. **Zerar** limpa tudo para um novo trabalho.
+
+O botão **P/ DEVS** copia só o resultado da última ferramenta executada (comando, achados e
+saída completa) para a área de transferência — pronto para colar num ticket, e-mail ou
+mensagem para a equipe de desenvolvimento, sem precisar gerar o relatório inteiro.
 
 ## Como instalar no RedMagic
 
