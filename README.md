@@ -62,6 +62,11 @@ que você abrir.
 | Encoder/Hash | Base64, URL, hex, MD5/SHA-1/SHA-256/SHA-512 (offline) |
 | **JWT** | Decodifica e audita tokens JWT: alg=none, expiração, claims sensíveis |
 
+### Terminal
+| Aba | O que faz |
+|---|---|
+| **Terminal** | Shell real do Android (`/system/bin/sh`, sem root), desenvolvido direto no app — não embute nem chama o Termux. Fica vivo durante a sessão: `cd` e variáveis de ambiente valem pro próximo comando, como um terminal de verdade. Roda com as mesmas permissões do app e os binários que já vêm no sistema (ls, cat, ps, ip, netstat, ping, grep, find...). Sem gerenciador de pacotes e sem pseudo-terminal completo (comandos interativos como vim/top não funcionam). Digite `exit` pra encerrar o shell atual |
+
 ## Quando acha uma falha
 
 Os achados aparecem **direto no terminal, ao vivo**, destacados em vermelho/laranja/amarelo
