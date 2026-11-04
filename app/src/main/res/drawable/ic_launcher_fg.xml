@@ -1,13 +1,46 @@
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="108dp" android:height="108dp"
     android:viewportWidth="108" android:viewportHeight="108">
-    <!-- escudo -->
-    <path android:fillColor="#E5132B"
-        android:pathData="M54,26 L76,34 L76,52 C76,66 66,77 54,82 C42,77 32,66 32,52 L32,34 Z" />
+
+    <!-- pernas de circuito (decorativas, podem ser cortadas pela máscara adaptativa) -->
+    <path android:strokeColor="#FF2BD6" android:strokeWidth="2" android:fillColor="#00000000"
+        android:strokeLineCap="round" android:strokeAlpha="0.55"
+        android:pathData="M54,20 L54,8 M24.56,37 L14.2,31 M24.56,71 L14.2,77" />
+    <path android:strokeColor="#00F0FF" android:strokeWidth="2" android:fillColor="#00000000"
+        android:strokeLineCap="round" android:strokeAlpha="0.55"
+        android:pathData="M54,88 L54,100 M83.44,71 L93.8,77 M83.44,37 L93.8,31" />
+    <path android:fillColor="#FF2BD6" android:fillAlpha="0.8"
+        android:pathData="M54,8 m-2.4,0 a2.4,2.4 0 1,0 4.8,0 a2.4,2.4 0 1,0 -4.8,0" />
+    <path android:fillColor="#FF2BD6" android:fillAlpha="0.8"
+        android:pathData="M14.2,31 m-2.4,0 a2.4,2.4 0 1,0 4.8,0 a2.4,2.4 0 1,0 -4.8,0" />
+    <path android:fillColor="#FF2BD6" android:fillAlpha="0.8"
+        android:pathData="M14.2,77 m-2.4,0 a2.4,2.4 0 1,0 4.8,0 a2.4,2.4 0 1,0 -4.8,0" />
+    <path android:fillColor="#00F0FF" android:fillAlpha="0.8"
+        android:pathData="M54,100 m-2.4,0 a2.4,2.4 0 1,0 4.8,0 a2.4,2.4 0 1,0 -4.8,0" />
+    <path android:fillColor="#00F0FF" android:fillAlpha="0.8"
+        android:pathData="M93.8,77 m-2.4,0 a2.4,2.4 0 1,0 4.8,0 a2.4,2.4 0 1,0 -4.8,0" />
+    <path android:fillColor="#00F0FF" android:fillAlpha="0.8"
+        android:pathData="M93.8,31 m-2.4,0 a2.4,2.4 0 1,0 4.8,0 a2.4,2.4 0 1,0 -4.8,0" />
+
+    <!-- halo do hexágono (brilho neon simulado com traços largos e baixa opacidade) -->
+    <path android:strokeColor="#FF2BD6" android:strokeWidth="9" android:fillColor="#00000000"
+        android:strokeLineJoin="round" android:strokeAlpha="0.22"
+        android:pathData="M54,20 L83.44,37 L83.44,71 L54,88 L24.56,71 L24.56,37 Z" />
+    <path android:strokeColor="#00F0FF" android:strokeWidth="5" android:fillColor="#00000000"
+        android:strokeLineJoin="round" android:strokeAlpha="0.35"
+        android:pathData="M54,20 L83.44,37 L83.44,71 L54,88 L24.56,71 L24.56,37 Z" />
+
+    <!-- corpo: hexágono preenchido quase preto + contorno neon nítido -->
+    <path android:fillColor="#07070C"
+        android:pathData="M54,20 L83.44,37 L83.44,71 L54,88 L24.56,71 L24.56,37 Z" />
+    <path android:strokeColor="#00F0FF" android:strokeWidth="2.6" android:fillColor="#00000000"
+        android:strokeLineJoin="round"
+        android:pathData="M54,20 L83.44,37 L83.44,71 L54,88 L24.56,71 L24.56,37 Z" />
+
     <!-- prompt >_ -->
-    <path android:strokeColor="#FFFFFF" android:strokeWidth="4" android:fillColor="#00000000"
+    <path android:strokeColor="#39FF14" android:strokeWidth="5" android:fillColor="#00000000"
         android:strokeLineCap="round" android:strokeLineJoin="round"
-        android:pathData="M44,46 L52,53 L44,60" />
-    <path android:strokeColor="#FFFFFF" android:strokeWidth="4" android:fillColor="#00000000"
-        android:strokeLineCap="round" android:pathData="M56,61 L66,61" />
+        android:pathData="M43,45 L53,54 L43,63" />
+    <path android:strokeColor="#39FF14" android:strokeWidth="5" android:fillColor="#00000000"
+        android:strokeLineCap="round" android:pathData="M57,64 L68,64" />
 </vector>
