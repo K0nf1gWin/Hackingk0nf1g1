@@ -1,4 +1,4 @@
-# Hackingk0nf1g1 — RedPentest
+# Hackingk0nf1g1 — DarkWire
 
 App Android (Kotlin, sem dependências pesadas) com ferramentas de auditoria de rede,
 feito para rodar no **RedMagic** (ou qualquer Android 8+). Não precisa de root.
@@ -63,7 +63,7 @@ Toda ferramenta executada fica registrada na sessão, e os achados recebem uma s
 
 O botão **👁 Relatório** abre o relatório HTML **direto na tela do app** (sumário executivo,
 tabela de achados, detalhamento, metodologia e anexo com as saídas) — não precisa baixar nada
-para ver. De dentro dele, o botão **Salvar** grava em `Download/RedPentest/` nos formatos:
+para ver. De dentro dele, o botão **Salvar** grava em `Download/DarkWire/` nos formatos:
 
 - **HTML** (o mesmo que você acabou de ver)
 - **Markdown**: para colar em wiki, Jira ou Confluence
@@ -73,10 +73,10 @@ Depois é só compartilhar por e-mail, Drive, Teams etc. **Zerar** limpa tudo pa
 
 ## Como instalar no RedMagic
 
-1. Abra a aba **Releases** do repositório no celular e baixe o `RedPentest.apk` mais recente
+1. Abra a aba **Releases** do repositório no celular e baixe o `DarkWire.apk` mais recente
    (cada push gera um build automático pelo GitHub Actions).
 2. Abra o arquivo e permita "instalar apps de fontes desconhecidas" para o navegador/arquivos.
-3. Abra o **RedPentest** e aceite o termo de uso autorizado.
+3. Abra o **DarkWire** e aceite o termo de uso autorizado.
 
 ## Compilar localmente
 

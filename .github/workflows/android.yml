@@ -27,19 +27,19 @@ jobs:
           ./gradlew --no-daemon assembleRelease
 
       - name: Rename APK
-        run: cp app/build/outputs/apk/release/app-release.apk RedPentest.apk
+        run: cp app/build/outputs/apk/release/app-release.apk DarkWire.apk
 
       - uses: actions/upload-artifact@v4
         with:
-          name: RedPentest-apk
-          path: RedPentest.apk
+          name: DarkWire-apk
+          path: DarkWire.apk
 
       # Publica o APK numa Release para baixar fácil pelo celular
       - name: Publish release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: build-${{ github.run_number }}
-          name: RedPentest build ${{ github.run_number }}
+          name: DarkWire build ${{ github.run_number }}
           target_commitish: ${{ github.sha }}
           prerelease: true
-          files: RedPentest.apk
+          files: DarkWire.apk
