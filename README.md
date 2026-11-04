@@ -2,6 +2,7 @@
 
 App Android (Kotlin, sem dependências pesadas) com ferramentas de auditoria de rede,
 feito para rodar no **RedMagic** (ou qualquer Android 8+). Não precisa de root.
+Visual neon (cada categoria tem sua cor: ciano, magenta, verde, âmbar, violeta).
 
 > ⚠️ Use apenas em redes e sistemas que você possui ou tem autorização por escrito
 > para testar. Acesso não autorizado é crime (Lei 12.737/2012). Ferramentas de scan
@@ -18,13 +19,13 @@ feito para rodar no **RedMagic** (ou qualquer Android 8+). Não precisa de root.
 | **Whois** | Registro de domínio/IP via RDAP: registrador, datas, status, nameservers, bloco de rede |
 | **Shodan** | Consulta o Shodan InternetDB (grátis, sem tocar no alvo): portas, tecnologias, CVEs já indexados |
 | **CVE** | Busca no NVD por produto/versão ou CVE-ID, com flag CISA KEV (exploração ativa) e score EPSS |
-| Subdomínios | Recon passivo via Certificate Transparency (crt.sh) |
+| **Subdomínios** | Descoberta ativa + passiva: 7 fontes passivas + wordlist, resolução DNS e detecção de subdomain takeover (CNAME pendente) |
 | DNS | A, AAAA, MX, NS, TXT, CNAME, SOA, CAA via DNS-over-HTTPS; reverso de IP |
 
 ### Scan
 | Aba | O que faz |
 |---|---|
-| **Nmap** | Scanner nativo estilo Nmap: descoberta, portas TCP (-p) e UDP (-sU), versão de serviço (-sV), SO por TTL (-O), scripts (-sC: ftp-anon, redis-info, ssl-cert, http-title/methods...), alerta de versões vulneráveis |
+| **Nmap** | Scanner nativo estilo Nmap: descoberta, portas TCP (-p) e UDP (-sU), versão de serviço (-sV), SO por TTL (-O), scripts (-sC: ftp-anon, redis-info, ssl-cert, http-title/methods...), alerta de versões vulneráveis e consulta automática de CVEs no NVD por serviço detectado |
 | Hosts na LAN | Descobre dispositivos ativos na rede (sondagem TCP/RST + echo) com hostname |
 | Port scan | TCP connect scan (top, all, faixas, listas) com captura de banner |
 | **UPnP/SSDP** | Descobre dispositivos UPnP na LAN (roteadores, TVs, câmeras, IoT) com fabricante/modelo |
@@ -59,13 +60,16 @@ feito para rodar no **RedMagic** (ou qualquer Android 8+). Não precisa de root.
 
 Toda ferramenta executada fica registrada na sessão, e os achados recebem uma severidade
 (Crítica, Alta, Média, Baixa ou Info), com evidência e recomendação.
-O botão **📄 Relatório** gera e salva em `Download/RedPentest/`:
 
-- **HTML**: sumário executivo, tabela de achados, detalhamento, metodologia e anexo com as saídas
+O botão **👁 Relatório** abre o relatório HTML **direto na tela do app** (sumário executivo,
+tabela de achados, detalhamento, metodologia e anexo com as saídas) — não precisa baixar nada
+para ver. De dentro dele, o botão **Salvar** grava em `Download/RedPentest/` nos formatos:
+
+- **HTML** (o mesmo que você acabou de ver)
 - **Markdown**: para colar em wiki, Jira ou Confluence
 - **CSV**: para planilha, SIEM ou abertura de tickets
 
-Depois é só compartilhar por e-mail, Drive, Teams etc. **Zerar sessão** limpa tudo para um novo trabalho.
+Depois é só compartilhar por e-mail, Drive, Teams etc. **Zerar** limpa tudo para um novo trabalho.
 
 ## Como instalar no RedMagic
 

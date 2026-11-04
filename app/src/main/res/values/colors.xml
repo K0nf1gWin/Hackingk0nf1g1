@@ -1,9 +1,15 @@
 <resources>
-    <color name="bg">#0B0B0D</color>
-    <color name="panel">#16161A</color>
-    <color name="red">#E5132B</color>
+    <color name="bg">#05050A</color>
+    <color name="panel">#0D0E18</color>
+    <color name="panel_border">#242640</color>
+    <color name="red">#FF2158</color>
     <color name="red_dark">#8E0B1A</color>
-    <color name="text">#ECECEC</color>
-    <color name="muted">#8A8A92</color>
-    <color name="term">#4CFF7A</color>
+    <color name="text">#EAF6FF</color>
+    <color name="muted">#7A7F9E</color>
+    <color name="term">#39FF14</color>
+    <color name="neon_cyan">#00F0FF</color>
+    <color name="neon_magenta">#FF2BD6</color>
+    <color name="neon_green">#39FF14</color>
+    <color name="neon_amber">#FFD400</color>
+    <color name="neon_violet">#B388FF</color>
 </resources>
