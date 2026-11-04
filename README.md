@@ -38,6 +38,7 @@ que você abrir.
 | **Repeater** | Monta uma requisição HTTP à mão (método, URL, cabeçalhos, corpo) e mostra a resposta crua — edite e reenvie, como o Repeater do Burp/ZAP |
 | **Intruder** | Fuzzer de parâmetro estilo Burp Intruder (modo Sniper): marque o ponto com `§FUZZ§`, escolha um conjunto de payloads (SQLi/XSS/LFI/command injection/números/customizado) e compare status, tamanho e tempo de cada resposta |
 | **Dir fuzz** | Varredura de caminhos/arquivos sensíveis (admin, .git, .env, backups, actuator...) com wordlist embutida |
+| **Bypass CDN (origem)** | Procura o servidor de origem real por trás de um CDN/WAF (Cloudflare, Akamai, Sucuri...): cruza subdomínios, SPF/MX e IPs manuais, conecta direto em cada candidato e compara com o site oficial. Se achar, o CDN/WAF pode ser contornado por completo — causa raiz clássica de "tínhamos WAF e mesmo assim fomos invadidos". Só leitura/comparação, não autentica em nada |
 
 ### Rede
 | Aba | O que faz |
