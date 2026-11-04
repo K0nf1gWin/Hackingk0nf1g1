@@ -61,7 +61,12 @@ que você abrir.
 
 ## Quando acha uma falha
 
-Ao final de qualquer execução que gerar achados, o app pergunta o que você quer fazer:
+Os achados aparecem **direto no terminal, ao vivo**, destacados em vermelho/laranja/amarelo
+conforme a severidade — não precisa gerar relatório pra ver (o relatório é só pra guardar/enviar
+depois). Subdomínios, hosts, e-mails etc. também aparecem na hora, linha por linha, enquanto a
+ferramenta roda.
+
+Ao final de qualquer execução que gerar achados, o app também pergunta o que você quer fazer:
 consultar o CVE do item mais grave (abre a aba CVE já preenchida) ou gerar o relatório na hora.
 
 ## Relatórios
