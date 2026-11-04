@@ -77,6 +77,21 @@ ferramenta roda.
 Ao final de qualquer execução que gerar achados, o app também pergunta o que você quer fazer:
 consultar o CVE do item mais grave (abre a aba CVE já preenchida) ou gerar o relatório na hora.
 
+## Proxy (opcional)
+
+Abaixo do campo ALVO tem um indicador "⚙ Proxy" — toque nele pra configurar um proxy HTTP ou
+SOCKS5 que **você** escolhe (ex.: um bridge SOCKS5 de VPN, um SOCKS próprio, Burp/ZAP). Fica
+salvo entre sessões. SOCKS5 vale pra tudo (chamadas HTTP e os scanners de porta/conexão direta);
+proxy HTTP só vale pras chamadas HTTP(S). Ferramentas baseadas em UDP (SSDP/WS-Discovery) e as
+que chamam binários do sistema (ping/traceroute) não passam pelo proxy.
+
+Isso é diferente de uma VPN instalada no celular (ProtonVPN e afins): se você já tem uma VPN
+conectada no sistema, **todo** o tráfego do aparelho — incluindo o do Blackout Hat — já passa por
+ela automaticamente, sem precisar configurar nada aqui. O campo de proxy serve pra quando você
+quer apontar só o tráfego das ferramentas pra algo específico (ex.: um SOCKS seu, ou o proxy do
+Burp pra inspecionar as requisições). O app nunca escolhe nem troca de proxy/país sozinho — é
+sempre o que você configurar, de forma explícita.
+
 ## Relatórios
 
 Toda ferramenta executada fica registrada na sessão, e os achados recebem uma severidade
