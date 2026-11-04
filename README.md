@@ -2,7 +2,10 @@
 
 App Android (Kotlin, sem dependências pesadas) com ferramentas de auditoria de rede,
 feito para rodar no **RedMagic** (ou qualquer Android 8+). Não precisa de root.
-Visual neon (cada categoria tem sua cor: ciano, magenta, verde, âmbar, violeta).
+Visual neon com chuva de código vermelha de fundo (cada categoria tem sua cor: OSINT ciano,
+Black Hat magenta, Rede verde, Web âmbar, Análise violeta). Tem um campo de **ALVO** global no
+topo: defina domínio/IP/URL uma vez e ele preenche o campo correspondente em qualquer ferramenta
+que você abrir.
 
 > ⚠️ Use apenas em redes e sistemas que você possui ou tem autorização por escrito
 > para testar. Acesso não autorizado é crime (Lei 12.737/2012). Ferramentas de scan
@@ -11,7 +14,7 @@ Visual neon (cada categoria tem sua cor: ciano, magenta, verde, âmbar, violeta)
 
 ## Ferramentas
 
-### Recon
+### OSINT
 | Aba | O que faz |
 |---|---|
 | **EASM** | Superfície de ataque externa de um domínio: subdomínios (7 fontes passivas), DNS, subdomain takeover, IP/ASN, portas de risco expostas, serviços web, TLS, arquivos sensíveis (.git, .env, actuator, phpinfo...), SPF/DMARC/CAA/DNSSEC |
@@ -22,13 +25,17 @@ Visual neon (cada categoria tem sua cor: ciano, magenta, verde, âmbar, violeta)
 | **Subdomínios** | Descoberta ativa + passiva: 7 fontes passivas + wordlist, resolução DNS e detecção de subdomain takeover (CNAME pendente) |
 | DNS | A, AAAA, MX, NS, TXT, CNAME, SOA, CAA via DNS-over-HTTPS; reverso de IP |
 
-### Scan
+### Black Hat (testes ativos/agressivos)
 | Aba | O que faz |
 |---|---|
 | **Nmap** | Scanner nativo estilo Nmap: descoberta, portas TCP (-p) e UDP (-sU), versão de serviço (-sV), SO por TTL (-O), scripts (-sC: ftp-anon, redis-info, ssl-cert, http-title/methods...), alerta de versões vulneráveis e consulta automática de CVEs no NVD por serviço detectado |
 | Hosts na LAN | Descobre dispositivos ativos na rede (sondagem TCP/RST + echo) com hostname |
 | Port scan | TCP connect scan (top, all, faixas, listas) com captura de banner |
 | **UPnP/SSDP** | Descobre dispositivos UPnP na LAN (roteadores, TVs, câmeras, IoT) com fabricante/modelo |
+| **Web Pentest** | Rastreia o site e testa XSS refletido, SQLi, open redirect, CRLF/header injection, CORS mal configurado, Host header injection, segredos vazados em HTML/JS, CSRF ausente e GraphQL introspection. Só GET e payloads inofensivos — não envia formulário nem tenta login |
+| **Repeater** | Monta uma requisição HTTP à mão (método, URL, cabeçalhos, corpo) e mostra a resposta crua — edite e reenvie, como o Repeater do Burp/ZAP |
+| **Intruder** | Fuzzer de parâmetro estilo Burp Intruder (modo Sniper): marque o ponto com `§FUZZ§`, escolha um conjunto de payloads (SQLi/XSS/LFI/command injection/números/customizado) e compare status, tamanho e tempo de cada resposta |
+| **Dir fuzz** | Varredura de caminhos/arquivos sensíveis (admin, .git, .env, backups, actuator...) com wordlist embutida |
 
 ### Rede
 | Aba | O que faz |
@@ -39,22 +46,23 @@ Visual neon (cada categoria tem sua cor: ciano, magenta, verde, âmbar, violeta)
 | **Traceroute** | Mapeia os saltos até o alvo via ping com TTL crescente |
 | **Wi-Fi** | Redes próximas: canal, sinal, criptografia; alerta rede aberta, WEP, WPA1, WPS |
 
-### Web
+### Web (leitura/recon não intrusivo)
 | Aba | O que faz |
 |---|---|
-| **Web Pentest** | Rastreia o site e testa XSS refletido, SQLi, open redirect, CRLF/header injection, CORS mal configurado, Host header injection, segredos vazados em HTML/JS, CSRF ausente e GraphQL introspection. Só GET e payloads inofensivos — não envia formulário nem tenta login |
-| **Repeater** | Monta uma requisição HTTP à mão (método, URL, cabeçalhos, corpo) e mostra a resposta crua — edite e reenvie, como o Repeater do Burp/ZAP |
-| **Intruder** | Fuzzer de parâmetro estilo Burp Intruder (modo Sniper): marque o ponto com `§FUZZ§`, escolha um conjunto de payloads (SQLi/XSS/LFI/command injection/números/customizado) e compare status, tamanho e tempo de cada resposta |
 | HTTP/TLS | Cabeçalhos de segurança, cookies, vazamento de versão, certificado TLS |
 | **TLS scan** | Protocolos suportados (SSLv3–TLS1.3), cifras fracas, detalhes do certificado |
 | **Tecnologias** | Fingerprint de CMS/framework/JS (com versões vulneráveis), CDN e WAF |
-| **Dir fuzz** | Varredura de caminhos/arquivos sensíveis (admin, .git, .env, backups, actuator...) com wordlist embutida |
 
 ### Análise
 | Aba | O que faz |
 |---|---|
 | Encoder/Hash | Base64, URL, hex, MD5/SHA-1/SHA-256/SHA-512 (offline) |
 | **JWT** | Decodifica e audita tokens JWT: alg=none, expiração, claims sensíveis |
+
+## Quando acha uma falha
+
+Ao final de qualquer execução que gerar achados, o app pergunta o que você quer fazer:
+consultar o CVE do item mais grave (abre a aba CVE já preenchida) ou gerar o relatório na hora.
 
 ## Relatórios
 
@@ -69,7 +77,9 @@ para ver. De dentro dele, o botão **Salvar** grava em `Download/BlackoutHat/` n
 - **Markdown**: para colar em wiki, Jira ou Confluence
 - **CSV**: para planilha, SIEM ou abertura de tickets
 
-Depois é só compartilhar por e-mail, Drive, Teams etc. **Zerar** limpa tudo para um novo trabalho.
+De dentro do relatório também tem o botão **📧 EMAIL**, que salva os arquivos e já abre o
+app de e-mail do celular com HTML, Markdown e CSV anexados — só escrever o destinatário e
+mandar. **Zerar** limpa tudo para um novo trabalho.
 
 O botão **P/ DEVS** copia só o resultado da última ferramenta executada (comando, achados e
 saída completa) para a área de transferência — pronto para colar num ticket, e-mail ou
