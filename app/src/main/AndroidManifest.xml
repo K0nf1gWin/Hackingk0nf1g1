@@ -9,6 +9,14 @@
 
     <uses-feature android:name="android.hardware.wifi" android:required="false" />
 
+    <!-- Permite ver se o Termux está instalado e chamar RunCommandService (Android 11+ requer <queries>). -->
+    <queries>
+        <package android:name="com.termux" />
+        <intent>
+            <action android:name="com.termux.RUN_COMMAND" />
+        </intent>
+    </queries>
+
     <application
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
